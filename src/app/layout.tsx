@@ -1,15 +1,37 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Mona_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const monaSans = Mona_Sans({
+  variable: "--font-mona-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const degular = localFont({
+  src: [
+    {
+      path: "../../public/fonts/DegularTextDemo-Light.otf",
+      weight: "300",
+    },
+    {
+      path: "../../public/fonts/DegularTextDemo-Regular.otf",
+      weight: "400",
+    },
+    {
+      path: "../../public/fonts/DegularTextDemo-Medium.otf",
+      weight: "500",
+    },
+    {
+      path: "../../public/fonts/DegularTextDemo-Semibold.otf",
+      weight: "600",
+    },
+    {
+      path: "../../public/fonts/DegularTextDemo-Bold.otf",
+      weight: "700",
+    },
+  ],
+  variable: "--font-degular",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +47,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${monaSans.variable} ${degular.variable} antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
