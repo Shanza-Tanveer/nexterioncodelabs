@@ -1,7 +1,9 @@
-import React from "react";
+import Hero from "@/components/Hero";
 
-const page = () => {
-  return <div>page</div>;
-};
-
-export default page;
+export default function Home() {
+  return (
+    <main className="relative">
+      <Hero />
+    </main>
+  );
+}

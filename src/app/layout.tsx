@@ -49,7 +49,9 @@ export default function RootLayout({
       lang="en"
       className={`${monaSans.variable} ${degular.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="font-degular antialiased min-h-screen flex flex-col bg-[#050505]">
+        {children}
+      </body>
     </html>
   );
 }
