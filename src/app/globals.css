@@ -1,30 +1,136 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #28203d;
-  --primary: #28203d;
-  --secondary: #6039bb;
-  --accent-cyan: #19c9d1;
-  --accent-soft: #c3f2f4;
-  --dark-navy: #22234a;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
-  --color-cyan-brand: var(--accent-cyan);
-  --color-soft-cyan: var(--accent-soft);
-  --color-navy: var(--dark-navy);
+  --color-background: #ffffff;
+  --color-foreground: #28203d;
+  --color-primary: #28203d;
+  --color-secondary: #6039bb;
+  --color-accent-cyan: #19c9d1;
+  --color-accent-soft: #c3f2f4;
+  --color-subtle-grey: #f5f5f5;
+  --color-navy: #22234a;
+  --color-from-primary: #ffffff;
+  --color-to-primary: #b99dfa;
+  --color-from-secondary: #724dc7;
+  --color-to-secondary: #19c9d1;
+  --color-muted-ocean: #a4c8cf;
+  --color-danger: #f03c2e;
+  --color-icon: #3e3b55;
   --font-degular: var(--font-degular);
   --font-mona: var(--font-mona-sans);
+  --keyframes-rotate: {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(1turn);
+    }
+  };
+  --animation-rotate: rotate 3.5s linear infinite;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: #ffffff;
+  color: #28203d;
   font-family: var(--font-mona), sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+.dark-gradient-button {
+  width: 125px;
+  height: 40px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 80;
+  overflow: hidden;
+  padding: 2px;
+  transition-duration: 0.5s;
+}
+
+.dark-gradient-button:hover {
+  transform: scale(1.07);
+}
+
+.dark-gradient-button button {
+  z-index: 50;
+  width: 100%;
+  background: linear-gradient(90deg, #22234a, #21395d);
+  height: 100%;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.dark-gradient-button:before {
+  content: "";
+  width: 135px;
+  height: 324%;
+  position: absolute;
+  background: linear-gradient(#6039bb, rgba(0, 0, 0, 0.5), #19c9d1);
+  animation: rotate 3.5s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.gradientButton {
+  width: 250px;
+  height: 55px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 80;
+  overflow: hidden;
+  padding: 2px;
+  transition-duration: 0.5s;
+}
+
+.gradientButton:before {
+  content: "";
+  width: 300px;
+  height: 500%;
+  position: absolute;
+  background: linear-gradient(#6039bb, #19c9d1);
+  animation: rotate 2s linear infinite;
+}
+
+.gradientButton button {
+  z-index: 50;
+  width: 100%;
+  background: linear-gradient(90deg, #e8d8f0, #dcf8f8);
+  height: 100%;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #28203d;
+  cursor: pointer;
+}
+
+.gradientButton:hover {
+  transform: scale(1.07);
+}
+
+.portfolio-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background-color: #6039bb;
+  opacity: 0.3;
+  transition: all 0.5s ease;
+  margin: 0 !important;
+}
+
+.portfolio-pagination .swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 20px;
+  border-radius: 6px;
 }

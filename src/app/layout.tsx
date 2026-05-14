@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { Mona_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import DesktopHeader from "@/components/layout/DesktopHeader";
+import ScrollWidget from "@/components/ui/ScrollWidget";
+import Footer from "@/components/layout/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 const monaSans = Mona_Sans({
   variable: "--font-mona-sans",
@@ -35,18 +39,63 @@ const degular = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Nexterion CodeLabs | The Next Criterion for Digital Excellence",
+  title: {
+    default: "Nexterion CodeLabs | The Next Criterion for Digital Excellence",
+    template: "%s | Nexterion CodeLabs",
+  },
   description:
-    "Nexterion represents 'The Next Criterion,' defining the future benchmark for high-end digital innovation, premium MERN stack development, and world-class UI/UX engineering.",
+    "Nexterion CodeLabs is a premium software development agency specializing in high-performance Next.js and MERN stack applications. Engineering world-class digital innovation for global brands.",
+  keywords: [
+    "Software Development Agency",
+    "Next.js Development",
+    "MERN Stack Experts",
+    "MERN Stack Development",
+    "Custom Software Solutions",
+    "Nexterion CodeLabs",
+    "Full Stack Developer Pakistan",
+    "Web Innovation",
+  ],
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
   openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://nexterioncodelabs.com",
+    siteName: "Nexterion CodeLabs",
+    title: "Nexterion CodeLabs | Premium Software Engineering",
+    description:
+      "Defining the future benchmark for high-end digital innovation and world-class UI/UX engineering.",
     images: [
       {
-        url: "/icons/nexterioncodelabs-icon.png",
+        url: "https://nexterioncodelabs.com/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Nexterion CodeLabs",
+        alt: "Nexterion CodeLabs - Digital Excellence",
       },
     ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Nexterion CodeLabs | Software Excellence",
+    description:
+      "Premium MERN stack and Next.js development for global innovation.",
+    images: ["https://nexterioncodelabs.com/images/og-image.png"],
+  },
+
+  alternates: {
+    canonical: "https://nexterioncodelabs.com",
   },
 };
 
@@ -60,8 +109,42 @@ export default function RootLayout({
       lang="en"
       className={`${monaSans.variable} ${degular.variable} antialiased`}
     >
-      <body className="font-degular antialiased min-h-screen flex flex-col bg-[#050505]">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Nexterion CodeLabs",
+              url: "https://nexterioncodelabs.com",
+              logo: "https://nexterioncodelabs.com/images/og-image.png",
+              description:
+                "A premium software development agency specializing in high-performance Next.js and MERN stack engineering.",
+              address: {
+                "@type": "PostalAddress",
+                addressCountry: "PK",
+              },
+              founders: [
+                {
+                  "@type": "Person",
+                  name: "Shanza",
+                },
+              ],
+              sameAs: [
+                "http://linkedin.com/in/shanza-tanveer-4a48731b7",
+                "https://www.linkedin.com/company/nexterioncodelabs",
+              ],
+            }),
+          }}
+        />
+      </head>
+      <body className="font-degular antialiased min-h-screen">
+        <DesktopHeader />
         {children}
+        <ScrollWidget />
+        <Footer />
+        <Analytics />
       </body>
     </html>
   );
