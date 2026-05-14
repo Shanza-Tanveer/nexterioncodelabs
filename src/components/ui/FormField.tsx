@@ -1,3 +1,14 @@
+"use client";
+
+interface FormFieldProps {
+  label: string;
+  placeholder: string;
+  name: string;
+  type?: string;
+  required?: boolean;
+  isFullWidth?: boolean;
+}
+
 const FormField = ({
   label,
   placeholder,
@@ -5,7 +16,7 @@ const FormField = ({
   type = "text",
   required = false,
   isFullWidth = false,
-}) => {
+}: FormFieldProps) => {
   return (
     <div
       className={`flex flex-col relative ${isFullWidth ? "md:col-span-2" : ""}`}
