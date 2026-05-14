@@ -45,6 +45,9 @@ export const metadata: Metadata = {
   },
   description:
     "Nexterion CodeLabs is a premium software development agency specializing in high-performance Next.js and MERN stack applications. Engineering world-class digital innovation for global brands.",
+  verification: {
+    google: "OE-0fieArX5zBzSuUQBI3NkZHp-rWdzOCvLVCpUNVPU",
+  },
   keywords: [
     "Software Development Agency",
     "Next.js Development",
