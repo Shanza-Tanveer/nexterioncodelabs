@@ -16,7 +16,7 @@ const Footer = () => {
           </p>
           <div className="flex items-center gap-3 me-16">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/nexterioncodelabs"
               target="_blank"
               className="flex h-8 w-8 items-center justify-center xl:h-11 xl:w-11 group"
             >
@@ -25,7 +25,7 @@ const Footer = () => {
               </div>
             </a>
             <a
-              href="mailto:hello@nexterion.com"
+              href="mailto:info@nexterioncodelabs.com"
               className="flex h-8 w-8 items-center justify-center xl:h-11 xl:w-11 group"
             >
               <div className="duration-400 flex h-full w-full items-center justify-center bg-icon text-gray-400 group-hover:text-to-secondary text-[22px]">
