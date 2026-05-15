@@ -6,6 +6,7 @@ import DesktopHeader from "@/components/layout/DesktopHeader";
 import ScrollWidget from "@/components/ui/ScrollWidget";
 import Footer from "@/components/layout/Footer";
 import { Analytics } from "@vercel/analytics/next";
+import Script from "next/script";
 
 const monaSans = Mona_Sans({
   variable: "--font-mona-sans",
@@ -143,6 +144,15 @@ export default function RootLayout({
         />
       </head>
       <body className="font-degular antialiased min-h-screen">
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "wrh3aareqr");
+          `}
+        </Script>
         <DesktopHeader />
         {children}
         <ScrollWidget />
