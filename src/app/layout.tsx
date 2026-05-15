@@ -7,6 +7,7 @@ import ScrollWidget from "@/components/ui/ScrollWidget";
 import Footer from "@/components/layout/Footer";
 import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const monaSans = Mona_Sans({
   variable: "--font-mona-sans",
@@ -158,6 +159,7 @@ export default function RootLayout({
         <ScrollWidget />
         <Footer />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
