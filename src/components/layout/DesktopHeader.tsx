@@ -18,10 +18,7 @@ const DesktopHeader = () => {
     <header className="fixed top-0 left-0 w-full z-999 bg-navy hidden lg:flex items-center h-[4.4rem]">
       <Container>
         <div className="flex items-center justify-between">
-          <Link
-            href={""}
-            className="relative h-[43%] w-28 md:h-[55%] md:w-40 lg:h-[50%]"
-          >
+          <Link href={""}>
             <Image
               src="/images/logo.svg"
               alt="Nexterion CodeLabs Logo"
